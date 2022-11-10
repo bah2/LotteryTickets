@@ -14,4 +14,36 @@ let winningTickets = [
    ];
 
 
+   window.onload = loadWinningTicketsTable;
+
+
+
+ function loadWinningTicketsTable(){
+    const tablebody = document.getElementById("winningTicketsTbl");
+
+    for(let ticket of winningTickets){
+        buildTickRow(tablebody, ticket)
+    }
+
+    function buildTickRow(tbody, ticket){
+        console.log(ticket);
+
+        let row = tbody.insertRow();
+        let tdticketNumbr = row.insertCell(0);
+        tdticketNumbr.innerHTML = ticket.tixNum;
+
+        let tdprize = row.insertCell(0);
+        tdprize.innerHTML = "$" + ticket.tixNum;
+
+        let tdexpires = row.insertCell(2);
+        tdexpires.innerHTML = ticket.expires;
+
+    }
+
+
+
+}
+
+
+
    
